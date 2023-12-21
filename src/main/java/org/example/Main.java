@@ -14,5 +14,6 @@ public class Main {
         driver.manage().window().maximize();
         driver.get("https://formy-project.herokuapp.com/form");
         Thread.sleep(5000);
+        System.out.println("jojojo entraste al main ");
     }
 }

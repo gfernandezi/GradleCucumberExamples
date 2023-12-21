@@ -11,6 +11,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MyStepDefs {
 
+    @Given("I navigate to OrangeHRM site")
+    public  void  i_navigate_to_orangesite() throws  InterruptedException{
+        WebDriverManager.chromedriver().clearDriverCache().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        Thread.sleep(5000);
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        System.out.println("Navigate to Orange Site " + driver.getTitle());
+
+    }
+
     @Given("I navigate to bank site")
     public void i_navigate_to_bank_site() throws InterruptedException {
         WebDriverManager.chromedriver().clearDriverCache().setup();
@@ -18,7 +29,7 @@ public class MyStepDefs {
         driver.manage().window().maximize();
         Thread.sleep(5000);
         driver.get("https://formy-project.herokuapp.com/form");
-        System.out.println("Navigated to bank site " + driver.getTitle());
+        System.out.println("Navigated to bank site  -->  " + driver.getTitle());
     }
     @When("I enter username and password")
     public void i_enter_username_and_password() {
